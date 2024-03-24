@@ -6,14 +6,15 @@ pipeline {
         echo 'Running build automation'
         sh './gradlew build --no-daemon'
         archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-      },
-  stage ('Test') {
+      }
+    }, // Corrected comma placement
+    stage ('Test') {
       steps {
-        echo 'Running build automation'
-        sh './gradlew build --no-daemon'
-        archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+        echo 'Running test automation'
+        sh './gradlew test --no-daemon'
+        archiveArtifacts artifacts: 'test-results/*.xml'
       }
     }
-  }
+  } // Corrected closing curly brace placement
 }
 
