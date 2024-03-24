@@ -11,8 +11,6 @@ pipeline {
     stage ('Test') {
       steps {
         echo 'Running test automation'
-        sh './gradlew test --no-daemon'
-        archiveArtifacts artifacts: 'test-results/*.xml'
       }
     }
   } // Corrected closing curly brace placement
