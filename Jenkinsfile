@@ -7,7 +7,7 @@ pipeline {
         sh './gradlew build --no-daemon'
         archiveArtifacts artifacts: 'dist/trainSchedule.zip'
       }
-    }, // Corrected comma placement
+    } // Removed the comma after this closing curly brace
     stage ('Test') {
       steps {
         echo 'Running test automation'
@@ -15,4 +15,3 @@ pipeline {
     }
   } // Corrected closing curly brace placement
 }
-
